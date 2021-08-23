@@ -1,0 +1,27 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: -75px;
+  z-index: -1;
+}
+
+.banner h1 {
+  margin: auto;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: normal;
+}
+
+.banner p {
+  font-size: 32px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
