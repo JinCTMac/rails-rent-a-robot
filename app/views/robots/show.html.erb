@@ -1,25 +1,59 @@
-<div class="container">
+<%= render 'shared/navbar' %>
+<div class="container show-div">
   <h1 class="main-title"> <%=  @robot.name %> </h1>
   <div class="robot-info">
-   <p class="robot-category"><%= @robot.category %></p>
-   <p class="robot-price"><%= @robot.price_per_day %></p>
+    <p class="robot-category"><%= @robot.category %></p>
+    <p class="robot-price"><%= @robot.price_per_day %></p>
   </div>
-  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-    <div class="container">
-    </div>
+  <div class="banner-show"
+  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
   </div>
+</div>
 </div>
 
-<div class="container">
+<div class="container card-container">
   <div class="row">
-    <div class="owner-info">
-     <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
-</div>
+    <div class="owner-info col-md-6">
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2>Owner Details</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
+            delectus nobis necessitatibus, ea et labore harum. Corrupti debitis libero cupiditate inventore, eligendi
+            repellat labore provident.</p>
+          </div>
+        </div>
+        <div> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, beatae at rem voluptatum, impedit corrupti
+          voluptas dolorum nemo libero delectus qui, sunt molestiae accusantium temporibus enim provident atque fuga
+          voluptatibus.</div>
+        </div>
+        <div class="col-md-6">
+          <!-- checkout -->
+          <div class="bg-white border p-3 sticky-top">
+            <a href="#" class="btn btn-primary w-100">Book Now</a>
+
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>Margherita</strong> (1)</p>
+              <p>£4.95</p>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>Regina</strong> (2)</p>
+              <p>£11.90</p>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3 border-bottom">
+              <p><strong>Diavola</strong> (1)</p>
+              <p>£6.95</p>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>Total</strong></p>
+              <p><strong>£23.80</strong></p>
+            </div>
+          </div>
+          <!-- /checkout -->
+        </div>
+      </div>
     </div>
-  </div>
-</div>
