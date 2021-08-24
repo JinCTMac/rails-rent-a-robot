@@ -1,0 +1,34 @@
+.main-title {
+ text-align: left;
+}
+
+.robot-info {
+  display: flex;
+
+}
+
+.robot-category {
+  padding: 0px;
+}
+
+.robot-price {
+ padding: 0px 10px;
+}
+
+.main-image {
+  height: 30%;
+  width: 70%;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-show {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
