@@ -2,14 +2,11 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: calc(100vh - 75px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
-  top: -75px;
-  z-index: -1;
 }
 
 .banner h1 {
