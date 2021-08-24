@@ -110,10 +110,20 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.1)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
+<<<<<<< HEAD
     nokogiri (1.12.3-x86_64-linux)
+=======
+    nokogiri (1.12.3-x86_64-darwin)
+    nokogiri (1.12.3)
+      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.3-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.12.3-x86_64-darwin)
+>>>>>>> master
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -152,7 +162,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.1)
+    rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
     railties (6.0.4.1)
       actionpack (= 6.0.4.1)
@@ -227,6 +237,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  ruby
   arm64-darwin-20
   x86_64-darwin-20
   x86_64-linux
@@ -261,4 +272,4 @@ RUBY VERSION
    ruby 2.7.3p183
 
 BUNDLED WITH
-   2.2.23
+   2.2.26
