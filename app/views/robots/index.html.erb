@@ -6,7 +6,8 @@
       <% @robots.each do |robot| %>
         <div class="col-sm-6 col-md-3">
           <div class="card-trip my-4">
-            <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+            <%# <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" /> %>
+            <%= cl_image_tag robot.photo.key, height: 300, width: 400, crop: :fill, class: 'robot-img' %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= robot.name %></h2>
@@ -20,3 +21,5 @@
       <% end %>
     </div>
 </div>
+
+<%= link_to 'sign out', destroy_user_session_path, method: :delete %>

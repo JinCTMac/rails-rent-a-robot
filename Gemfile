@@ -25,8 +25,11 @@ gem 'jbuilder', '~> 2.7'
 # Faker
 gem 'faker'
 
+# Cloudinary
+gem 'cloudinary', '~> 1.16.0'
+
 # Env for security (cloudinary)
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 
 # devise for users
 gem 'devise'

@@ -31,6 +31,6 @@ class RobotsController < ApplicationController
 
   def robot_params
     # strong params for robots
-    params.require(:robot).permit(:name, :category, :description, :price_per_day)
+    params.require(:robot).permit(:name, :category, :description, :price_per_day, :photo)
   end
 end
