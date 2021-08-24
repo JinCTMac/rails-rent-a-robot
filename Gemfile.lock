@@ -114,14 +114,13 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.3-x86_64-linux)
-    nokogiri (1.12.3-x86_64-darwin)
     nokogiri (1.12.3)
       mini_portile2 (~> 2.6.1)
     nokogiri (1.12.3-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.12.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.3-x86_64-linux)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -234,8 +233,8 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  ruby
   arm64-darwin-20
+  ruby
   x86_64-darwin-20
   x86_64-linux
 
