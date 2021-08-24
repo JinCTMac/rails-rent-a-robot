@@ -1,0 +1,22 @@
+<%= render 'shared/navbar' %>
+
+<div class="m-4">
+  <h1>Browse Robots</h1>
+    <div class="row">
+      <% @robots.each do |robot| %>
+        <div class="col-sm-6 col-md-3">
+          <div class="card-trip my-4">
+            <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= robot.name %></h2>
+                <p><%= robot.description %></p>
+              </div>
+              <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
+              <img src="https://source.unsplash.com/tTdC88_6a_I/300x300" class="card-trip-user avatar-bordered" />
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

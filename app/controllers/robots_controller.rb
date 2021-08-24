@@ -1,6 +1,10 @@
 class RobotsController < ApplicationController
   # before_action :find_user, only: [ :new, :create ]
 
+  def index
+    @robots = Robot.all
+  end
+
   def new
     # need to find the user the robot belongs to
     # via the url params :user_id

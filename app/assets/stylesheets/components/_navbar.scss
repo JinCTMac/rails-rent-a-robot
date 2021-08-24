@@ -1,6 +1,14 @@
-.navbar {
+.navbar-light {
   justify-content: space-between;
-  // background: #b1b1b1;
+  background: whitesmoke;
+  // background: rgb(120, 121, 128);
+  // border-bottom: 1px solid rgb(209, 207, 207);
+  box-shadow: 0px 0px 50px #b6b5b5;
+  height: 90px;
+}
+
+.navbar-home {
+  justify-content: space-between;
   height: 90px;
 }
 
