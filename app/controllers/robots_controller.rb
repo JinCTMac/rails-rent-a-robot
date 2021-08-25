@@ -23,8 +23,25 @@ class RobotsController < ApplicationController
     end
   end
 
+  def show
+    # @robot = Robot.new
+    @robot = Robot.find(params[:id])
+  end
+
+
   private
 
+<<<<<<< HEAD
+=======
+  # def find_user
+  # #   @user = User.find(params[:user_id])
+  #  end
+
+  # def find_robot
+  #   @robot = Robot.find(params[:robot_id])
+  # end
+
+>>>>>>> master
   def robot_params
     # strong params for robots
     params.require(:robot).permit(:name, :category, :description, :price_per_day, :photo)

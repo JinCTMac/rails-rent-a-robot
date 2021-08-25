@@ -1,0 +1,55 @@
+<%= render 'shared/navbar' %>
+<div class="container show-div">
+  <div class="title-container">
+    <h1 class="main-title"> <%=  @robot.name %> </h1>
+    <p>| ❤️ Save </p>
+  </div>
+  <div class="robot-info">
+    <p class="robot-category">🔧Category: <%= @robot.category %> | </p>
+    <p class="robot-price"> 💰Price: £<%= @robot.price_per_day %></p>
+  </div>
+  <div class="banner-show"
+    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);">
+    <div class="container">
+    </div>
+  </div>
+</div>
+
+<div class="container card-container">
+  <div class="row row-details">
+    <div class="owner-info col-md-6">
+      <div class="card-product">
+        <img
+          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+        <div class="card-product-infos">
+          <h2>Owner Details</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
+            delectus nobis necessitatibus, ea et labore harum. Corrupti debitis libero cupiditate inventore, eligendi
+            repellat labore provident.</p>
+        </div>
+      </div>
+      <div> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, beatae at rem voluptatum, impedit corrupti
+        voluptas dolorum nemo libero delectus qui, sunt molestiae accusantium temporibus enim provident atque fuga
+        voluptatibus.</div>
+    </div>
+    <div class="col-md-4 checkout">
+      <!-- checkout -->
+
+
+      <div class="bg-white border p-3 sticky-top">
+
+        <div class="d-flex justify-content-between mt-3">
+          <p><strong>Price Per Day: £<%= @robot.price_per_day %></strong></p>
+        </div>
+        <a href="#" class="btn btn-primary w-100 a-tag">Dates</a>
+        <hr class="hr-tag">
+
+        <div class="d-flex justify-content-between mt-3">
+          <p><strong>Total Price: £<%= @robot.price_per_day * 3 %> </strong></p>
+        </div>
+        <a href="#" class="btn btn-danger w-100 a-tag">Book Now</a>
+      </div>
+      <!-- /checkout -->
+    </div>
+  </div>
+</div>
