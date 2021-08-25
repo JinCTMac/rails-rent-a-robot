@@ -8,6 +8,7 @@
 
 puts "Cleaning up database..."
 
+Booking.destroy_all
 Robot.destroy_all
 
 puts "Database cleaned"
