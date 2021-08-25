@@ -19,7 +19,7 @@ User.create(email: "bob@gmail.com", password: "123456")
   robot = Robot.create!(
     name: Faker::Name.first_name,
     category: Faker::Job.field,
-    description: Faker::Job.seniority,
+    description: Faker::Quote.famous_last_words,
     price_per_day: rand(10..100),
     user: User.first
   )
