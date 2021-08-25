@@ -19,6 +19,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def confirmation
+    @robot = Robot.find(params[:robot_id])
+    @booking = @robot.bookings.last
+  end
+
   private
 
   def booking_params
