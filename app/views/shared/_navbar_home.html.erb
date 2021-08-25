@@ -21,7 +21,6 @@
         <a class="nav-link mr-3" href="<%= new_user_session_path %>">Login</a>
       <% else %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link mr-3' %>
-
       <% end %>
       </li>
       <li class="nav-item dropdown">

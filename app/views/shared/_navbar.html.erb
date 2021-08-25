@@ -17,7 +17,11 @@
         <a class="nav-link" href="<%= robots_path %>">Robots</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-3" href="<%= new_robot_path %>">Add a robot</a>
+      <% if user_signed_in? %>
+      <%= link_to 'Add a robot', new_robot_path, class: 'nav-link mr-3' %>
+      <% else %>
+      <%= link_to 'Login', new_user_session_path, class: 'nav-link mr-3' %>
+      <% end %>
       </li>
       <li class="nav-item dropdown">
         <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://source.unsplash.com/HBGYvOKXu8A/300x300" /> %>
