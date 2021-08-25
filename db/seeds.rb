@@ -12,7 +12,7 @@ Robot.destroy_all
 
 puts "Database cleaned"
 
-User.create(email: "asdf@gmail.com", password: "123456")
+User.create(email: "bob@gmail.com", password: "123456")
 
 10.times do
   robot = Robot.create!(
