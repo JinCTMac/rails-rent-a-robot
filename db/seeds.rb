@@ -15,13 +15,16 @@ puts "Database cleaned"
 User.create(email: "asdf@gmail.com", password: "123456")
 
 10.times do
-  Robot.create!(
+  robot = Robot.create!(
     name: Faker::Name.first_name,
     category: Faker::Job.field,
     description: Faker::Job.seniority,
     price_per_day: rand(10..100),
     user: User.first
   )
+  url = "https://source.unsplash.com/random?sig=#{rand(1..60)}/&robot/800x600"
+  file = URI.open(url)
+  robot.photo.attach(io: file, filename: "#{robot.name.gsub(" ", "-")}.jpeg", content_type: 'image/jpeg')
 end
 
 puts "#{Robot.count} Robots created"

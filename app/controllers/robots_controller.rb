@@ -6,15 +6,15 @@ class RobotsController < ApplicationController
   end
 
   def new
-    # need to find the user the robot belongs to
-    # via the url params :user_id
     @robot = Robot.new
   end
 
   def create
     @robot = Robot.new(robot_params)
+
     # to specifiy the user the robot belongs to we need to set .user = to @user
     @robot.user = current_user
+
     if @robot.save
       # return to the user the robot belongs to
       redirect_to root_path
@@ -41,6 +41,6 @@ class RobotsController < ApplicationController
 
   def robot_params
     # strong params for robots
-    params.require(:robot).permit(:name, :category, :description, :price_per_day)
+    params.require(:robot).permit(:name, :category, :description, :price_per_day, :photo)
   end
 end
