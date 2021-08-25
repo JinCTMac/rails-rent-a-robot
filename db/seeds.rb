@@ -13,11 +13,11 @@ Robot.destroy_all
 puts "Database cleaned"
 
 User.create(email: "asdf@gmail.com", password: "123456")
-
+ROBOT_CATEGORIES = ['Gardening', 'Chef', 'Driver', 'Home', 'Nanny']
 10.times do
   robot = Robot.create!(
     name: Faker::Name.first_name,
-    category: Faker::Job.field,
+    category: ROBOT_CATEGORIES.sample,
     description: Faker::Job.seniority,
     price_per_day: rand(10..100),
     user: User.first

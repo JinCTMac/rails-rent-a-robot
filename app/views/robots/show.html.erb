@@ -45,9 +45,42 @@
         <div class="d-flex justify-content-between mt-3">
           <p><strong>Total Price: £<%= @robot.price_per_day * 3 %> </strong></p>
         </div>
-        <a href="#" class="btn btn-secondary w-100 a-tag">Book Now</a>
+        <%# <a href="#" class="btn btn-secondary w-100 a-tag">Book Now</a> %>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary w-100 a-tag" data-toggle="modal" data-target="#exampleModal">
+          Book Now
+        </button>
       </div>
       <!-- /checkout -->
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="modal-text">
+          Robot Name..........<%= @robot.name %><br>
+          Total Price.........£<%= @robot.price_per_day * 3 %>
+          <%# Start Date..........<%= @robot.start_date %>
+          <%# End Date .............<%= @robot.end_date %>
+          Category..........<%= @robot.category%>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit Order</button>
+        <button type="button" class="btn btn-primary">Confirm Order</button>
+      </div>
     </div>
   </div>
 </div>
