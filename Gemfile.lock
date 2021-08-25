@@ -281,7 +281,6 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
-  popper_js
   pry-byebug
   pry-rails
   puma (~> 4.1)

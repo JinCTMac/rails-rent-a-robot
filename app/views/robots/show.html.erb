@@ -45,19 +45,11 @@
         <div class="d-flex justify-content-between mt-3">
           <p><strong>Total Price: £<%= @robot.price_per_day * 3 %> </strong></p>
         </div>
-<<<<<<< HEAD
         <%# <a href="#" class="btn btn-secondary w-100 a-tag">Book Now</a> %>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-secondary w-100 a-tag" data-toggle="modal" data-target="#exampleModal">
           Book Now
         </button>
-=======
-        <% if user_signed_in? %>
-          <a href="<%= new_robot_booking_path(@robot) %>" class="btn btn-secondary w-100 a-tag">Book Now</a>
-        <% else %>
-          <a href="<%= new_user_session_path %>" class="btn btn-secondary w-100 a-tag">Book Now</a>
-        <% end %>
->>>>>>> ceea721162ed96f42445405dfb1e44248be813e0
       </div>
       <!-- /checkout -->
     </div>
