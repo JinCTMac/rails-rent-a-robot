@@ -1,5 +1,10 @@
 <%= render 'shared/navbar' %>
 
+
+<div class="m-4 mt-4">
+  <%= render 'shared/search' %>
+</div>
+
 <div class="m-4">
   <h1>Browse Robots</h1>
   <div class="row">
@@ -8,9 +13,9 @@
       <%= link_to robot_path(robot) do %>
       <div class="card-trip my-4">
         <% if robot.photo.attached? %>
-          <%= cl_image_tag robot.photo.key, height: 300, width: 400, crop: :fill, class: 'robot-img' %>
+        <%= cl_image_tag robot.photo.key, height: 300, width: 400, crop: :fill, class: 'robot-img' %>
         <% else %>
-          <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+        <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
         <% end %>
         <div class="card-trip-infos">
           <div>
