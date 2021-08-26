@@ -1,14 +1,17 @@
 class RobotsController < ApplicationController
-  # before_action :find_user, only: [ :new, :create ]
+  before_action :find_robot, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    if params[:query].present?
-      # results = "#{params[:query]} #{params[categories]}""
+    if params[:query].present? || params[:category].present?
+      search_input = "#{params[:query]} #{params[:category]}"
       # results = params[:categories] + params[:query]
-      @robots = Robot.search_by_name_and_category(params[:query])
+      @robots = Robot.search_by_name_and_category(search_input)
     else
       @robots = Robot.all
     end
+  end
+
+  def show
   end
 
   def new
@@ -29,11 +32,21 @@ class RobotsController < ApplicationController
     end
   end
 
-  def show
-    # @robot = Robot.new
-    @robot = Robot.find(params[:id])
+  def edit
   end
 
+  def update
+    if @robot.update(robot_params)
+      redirect_to @robot, notice: 'Robot was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @robot.destroy
+    redirect_to robots_path
+  end
 
   private
 
@@ -41,9 +54,9 @@ class RobotsController < ApplicationController
   # #   @user = User.find(params[:user_id])
   #  end
 
-  # def find_robot
-  #   @robot = Robot.find(params[:robot_id])
-  # end
+  def find_robot
+    @robot = Robot.find(params[:id])
+  end
 
   def robot_params
     # strong params for robots

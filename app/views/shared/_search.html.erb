@@ -1,7 +1,8 @@
 <!-- [...] -->
 <div class="row">
   <div class="col-md-11">
-    <%= form_tag robots_path, method: :get do %>
+    <%= form_tag robots_path, method: :get, class: "form-inline" do %>
+    <%= select_tag :category, options_for_select(Robot::ROBOT_CATEGORIES), class: "w-25" %>
     <%= text_field_tag :query,
     params[:query],
     class: "form-control",

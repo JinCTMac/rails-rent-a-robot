@@ -9,5 +9,5 @@ class Robot < ApplicationRecord
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
 
-  ROBOT_CATEGORIES = ['Gardening', 'Chef', 'Driver', 'Home', 'Nanny']
+  ROBOT_CATEGORIES = ['All', 'Gardening', 'Chef', 'Driver', 'Home', 'Nanny']
 end
