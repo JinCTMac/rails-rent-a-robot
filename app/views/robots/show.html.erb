@@ -5,8 +5,13 @@
     <p>| ❤️ Save </p>
   </div>
   <div class="robot-info">
-    <p class="robot-category">🔧Category: <%= @robot.category %> | </p>
-    <p class="robot-price"> 💰Price: £<%= @robot.price_per_day %></p>
+    <div class="robot-details">
+      <p class="robot-category">🔧Category: <%= @robot.category %> | </p>
+      <p class="robot-price"> 💰Price: £<%= @robot.price_per_day %></p>
+    </div>
+    <div class="robot-actions">
+    <%= link_to 'Edit',  %>
+    </div>
   </div>
   <div class="banner-show"
     style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);">
@@ -60,7 +65,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -70,13 +76,13 @@
         </button>
       </div>
       <div class="modal-body">
-      <div class="modal-text">
+        <div class="modal-text">
           Robot Name..........<%= @robot.name %><br>
           Total Price.........£<%= @robot.price_per_day * 3 %><br>
           <%# Start Date..........<%= @robot.start_date %>
           <%# End Date .............<%= @robot.end_date %>
           Category..........<%= @robot.category%>
-      </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit Order</button>
