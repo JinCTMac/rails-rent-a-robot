@@ -9,10 +9,10 @@
     <p class="robot-price"> 💰Price: £<%= @robot.price_per_day %></p>
   </div>
   <div class="banner-show"
-    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);">
-    <div class="container">
-    </div>
+  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80);">
+  <div class="container">
   </div>
+</div>
 </div>
 
 <div class="container card-container">
@@ -20,68 +20,83 @@
     <div class="owner-info col-md-8">
       <div class="card-product">
         <img
-          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
         <div class="card-product-infos">
           <h2>Owner Details</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
             delectus nobis necessitatibus, ea et labore harum. Corrupti debitis libero cupiditate inventore, eligendi
             repellat labore provident.</p>
+          </div>
         </div>
-      </div>
-      <%= @robot.description %>
-      <%# <div> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, beatae at rem voluptatum, impedit corrupti
-        voluptas dolorum nemo libero delectus qui, sunt molestiae accusantium temporibus enim provident atque fuga
-        voluptatibus.</div> %>
-    </div>
-    <div class="col-md-4 checkout">
-      <!-- checkout -->
-      <div class="bg-white border p-3 sticky-top booking-card">
-
-        <div class="d-flex justify-content-between mt-3">
-          <p><strong>Price Per Day: £<%= @robot.price_per_day %></strong></p>
+        <%= @robot.description %>
+        <%# <div> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, beatae at rem voluptatum, impedit corrupti
+          voluptas dolorum nemo libero delectus qui, sunt molestiae accusantium temporibus enim provident atque fuga
+          voluptatibus.</div> %>
         </div>
-        <a href="#" class="btn btn-primary w-100 a-tag">Dates</a>
-        <hr class="hr-tag">
+        <div class="col-md-4 checkout">
+          <!-- checkout -->
+          <div class="bg-white border p-3 sticky-top booking-card">
 
-        <div class="d-flex justify-content-between mt-3">
-          <p><strong>Total Price: £<%= @robot.price_per_day * 3 %> </strong></p>
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>Price Per Day: £<%= @robot.price_per_day %></strong></p>
+            </div>
+            <!-- <a href="#" class="btn btn-primary w-100 a-tag">Dates</a>
+              <hr class="hr-tag">
+
+              <div class="d-flex justify-content-between mt-3">
+                <p><strong>Total Price: £<%= @robot.price_per_day * 3 %> </strong></p>
+              </div>
+              <%# <a href="#" class="btn btn-secondary w-100 a-tag">Book Now</a> %> -->
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary w-100 a-tag" data-toggle="modal" data-target="#bookingModal">
+                Book Now
+              </button>
+            </div>
+            <!-- /checkout -->
+          </div>
         </div>
         <%# <a href="#" class="btn btn-secondary w-100 a-tag">Book Now</a> %>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-danger w-100 a-tag" data-toggle="modal" data-target="#exampleModal">
+        <%# <button type="button" class="btn btn-danger w-100 a-tag" data-toggle="modal" data-target="#bookingModal">
           Book Now
-        </button>
+        </button> %>
       </div>
-      <!-- /checkout -->
-    </div>
-  </div>
-</div>
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <!-- Modal -->
+      <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" >
+          <div class="modal-content"  style="border-radius: 10px;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookingModalLabel">Order Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-text">
+                <h1>New Booking: <%= @robot.name %></h1>
+
+                <%= simple_form_for [@robot, @booking] do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                <%= f.input :count, as: :hidden, input_html: { value: @booking.errors.count } %>
+                <div class="form-inputs">
+                  <%= f.input :start_date, as: :date, html5: true %>
+                  <%= f.input :end_date, as: :date, html5: true %>
+                </div>
+
+                <%# Total Price.........£<%=# @robot.price_per_day * (@booking.end_date - @booking.start_date) if @booking.end_date && @booking.start_date %>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="form-actions btn btn-secondary" style="color: white;">
+                <%= f.button :submit, style: 'color: white;' %>
+              </div>
+              <!-- <button type="button" class="btn btn-primary">Confirm Order</button> -->
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-      <div class="modal-text">
-          Robot Name..........<%= @robot.name %><br>
-          Total Price.........£<%= @robot.price_per_day * 3 %><br>
-          <%# Start Date..........<%= @robot.start_date %>
-          <%# End Date .............<%= @robot.end_date %>
-          Category..........<%= @robot.category%>
-      </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit Order</button>
-        <button type="button" class="btn btn-primary">Confirm Order</button>
-      </div>
-    </div>
-  </div>
-</div>
