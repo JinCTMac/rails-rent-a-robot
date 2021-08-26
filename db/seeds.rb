@@ -18,7 +18,7 @@ ROBOT_CATEGORIES = ['Gardening', 'Chef', 'Driver', 'Home', 'Nanny']
   robot = Robot.create!(
     name: Faker::Name.first_name,
     category: ROBOT_CATEGORIES.sample,
-    description: Faker::Job.seniority,
+    description: Faker::Quote.famous_last_words,
     price_per_day: rand(10..100),
     user: User.first
   )
