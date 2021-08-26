@@ -2,7 +2,13 @@ class RobotsController < ApplicationController
   # before_action :find_user, only: [ :new, :create ]
 
   def index
-    @robots = Robot.all
+    if params[:query].present?
+      # results = "#{params[:query]} #{params[categories]}""
+      # results = params[:categories] + params[:query]
+      @robots = Robot.search_by_name_and_category(params[:query])
+    else
+      @robots = Robot.all
+    end
   end
 
   def new
