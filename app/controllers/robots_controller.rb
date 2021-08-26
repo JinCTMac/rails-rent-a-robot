@@ -2,9 +2,15 @@ class RobotsController < ApplicationController
   before_action :find_robot, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    if params[:query].present? || params[:category].present?
-      search_input = "#{params[:query]} #{params[:category]}"
-      @robots = Robot.search_by_name_and_category(search_input)
+    # if params[:query].present? || params[:category].present?
+    #   if params[:category] == "All" && params[:query].empty?
+    #     @robots = Robot.all
+    #   else
+    #     search_input = "#{params[:query]} #{params[:category]}"
+    #     @robots = Robot.search_by_name_and_category(search_input)
+    #   end
+    if params[:query].present?
+      @robots = Robot.search_by_name_and_category(params[:query])
     else
       @robots = Robot.all
     end
@@ -24,7 +30,7 @@ class RobotsController < ApplicationController
     @robot.user = current_user
     if @robot.save
       # return to the user the robot belongs to
-      redirect_to root_path
+      redirect_to robot_path(@robot)
     else
       render :new
     end

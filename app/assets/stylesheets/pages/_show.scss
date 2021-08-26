@@ -8,7 +8,11 @@
 
 .robot-info {
   display: flex;
+  justify-content: space-between;
+}
 
+.robot-details {
+  display: flex;
 }
 
 .robot-category {
@@ -17,6 +21,10 @@
 
 .robot-price {
   padding: 0px 10px;
+}
+
+.robot-actions .btn {
+  border-radius: 10px;
 }
 
 .main-image {
