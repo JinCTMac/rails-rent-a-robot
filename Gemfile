@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Faker
 gem 'faker'
 
+#bootstrap
+gem'bootstrap'
+
 # Cloudinary
 gem 'cloudinary', '~> 1.16.0'
 
