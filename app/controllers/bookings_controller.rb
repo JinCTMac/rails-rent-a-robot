@@ -1,8 +1,4 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-    @robot = Robot.find(params[:robot_id])
-  end
 
   def create
     @booking = Booking.new(booking_params)
@@ -10,12 +6,14 @@ class BookingsController < ApplicationController
 
     @robot = Robot.find(params[:robot_id])
     @booking.robot = @robot
-    @booking.total_price = (@booking.end_date - @booking.start_date) * @robot.price_per_day
+    if @booking.start_date && @booking.end_date
+      @booking.total_price = (@booking.end_date - @booking.start_date) * @robot.price_per_day
+    end
 
     if @booking.save
       redirect_to confirmation_robot_bookings_path(@robot)
     else
-      render :new
+      render "robots/show"
     end
   end
 
