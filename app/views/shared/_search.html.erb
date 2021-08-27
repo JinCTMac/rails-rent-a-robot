@@ -1,7 +1,7 @@
 <!-- [...] -->
+<%= form_tag robots_path, method: :get do %>
 <div class="row">
   <div class="col-md-11">
-    <%= form_tag robots_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -32,9 +32,9 @@
   </div>
   <div class="col-md-1">
     <%= submit_tag "Search", class: "btn btn-primary search-button" %>
-    <% end %>
   </div>
 </div>
+<% end %>
 <!-- the list of movies -->
 
 <%# add another input tag for categories %>
