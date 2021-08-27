@@ -23,7 +23,11 @@
             <p><%= robot.description %></p>
           </div>
           <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
-          <img src="https://source.unsplash.com/tTdC88_6a_I/300x300" class="card-trip-user avatar-bordered" />
+          <% if robot.user.photo.attached? %>
+              <%= cl_image_tag robot.user.photo.key, height: 300, width: 400, crop: :fill, class: 'card-trip-user avatar-bordered' %>
+          <% else %>
+              <img class="card-trip-user avatar-bordered" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+          <% end %>
         </div>
       </div>
       <% end %>

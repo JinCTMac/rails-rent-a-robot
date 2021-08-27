@@ -15,7 +15,7 @@ User.destroy_all
 puts "Database cleaned"
 
 def attach_photo(user)
-  url = "https://source.unsplash.com/random?sig=#{rand(1..60)}/&avatar/300x300"
+  url = "https://source.unsplash.com/random?sig=#{rand(1..60)}/&portrait/300x300"
   file = URI.open(url)
   user.photo.attach(io: file, filename: "#{user.first_name.gsub(" ", "-")}.jpeg", content_type: 'image/jpeg')
 end
@@ -33,7 +33,7 @@ attach_photo(user_3)
 USER_ARRAY = [user_1, user_2, user_3]
 ROBOT_CATEGORIES = ['Gardening', 'Chef', 'Driver', 'Home', 'Nanny']
 
-10.times do
+50.times do
   robot = Robot.create!(
     name: Faker::Name.first_name,
     category: ROBOT_CATEGORIES.sample,
@@ -41,7 +41,7 @@ ROBOT_CATEGORIES = ['Gardening', 'Chef', 'Driver', 'Home', 'Nanny']
     price_per_day: rand(10..100),
     user: USER_ARRAY.sample
   )
-  url = "https://source.unsplash.com/random?sig=#{rand(1..60)}/&robot/800x600"
+  url = "https://source.unsplash.com/random?sig=#{rand(1..60)}/&robotics/800x600"
   file = URI.open(url)
   robot.photo.attach(io: file, filename: "#{robot.name.gsub(" ", "-")}.jpeg", content_type: 'image/jpeg')
 end

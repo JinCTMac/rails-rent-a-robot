@@ -31,8 +31,11 @@
   <div class="row row-details">
     <div class="owner-info col-md-8">
       <div class="card-product">
-        <img
-          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+          <% if @robot.user.photo.attached? %>
+              <%= cl_image_tag @robot.user.photo.key, height: 300, width: 400, crop: :fill, class: 'card-trip-user avatar-bordered' %>
+          <% else %>
+              <img class="card-trip-user avatar-bordered" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+          <% end %>
         <div class="card-product-infos">
           <h2>Owner Details</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
