@@ -28,7 +28,8 @@
           <div>
             <h2><%= robot.name %></h2>
             <p><%= robot.description %></p>
-            <p><%= robot.category %></p>
+            <br>
+            <p><strong><%= robot.category.upcase %></strong> </p>
           </div>
           <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
           <% if robot.user.photo.attached? %>

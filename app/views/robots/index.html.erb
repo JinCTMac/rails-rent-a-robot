@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 
 
-<div class="m-4 mt-4">
+<div class="m-4 mt-4 px-5 mx-5">
   <%= render 'shared/search' %>
 </div>
 
@@ -21,6 +21,8 @@
           <div>
             <h2><%= robot.name %></h2>
             <p><%= robot.description %></p>
+            <br>
+            <p><strong><%= robot.category.upcase %></strong> </p>
           </div>
           <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
           <% if robot.user.photo.attached? %>
