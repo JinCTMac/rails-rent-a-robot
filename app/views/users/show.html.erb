@@ -1,14 +1,21 @@
 <%= render 'shared/navbar' %>
 
-
-<div class="m-4 mt-4">
-  <%= render 'shared/search' %>
+<div class="container d-flex mt-5 align-items-center">
+  <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: 'avatar-large m-3' %>
+  <% else %>
+        <img class="avatar-large m-3" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+  <% end %>
+  <h1>Hi I'm <%= @user.first_name.capitalize %></h1>
 </div>
 
-<div class="m-4">
-  <h1>Browse Robots</h1>
-  <div class="row">
-    <% @robots.each do |robot| %>
+<div class="container mt-5">
+
+<div class="">
+  <h1>My Robots</h1>
+  <% if @user.robots.length > 0  %>
+    <div class="row">
+    <% @user.robots.each do |robot| %>
     <div class="col-sm-6 col-md-3">
       <%= link_to robot_path(robot) do %>
       <div class="card-trip my-4">
@@ -21,6 +28,7 @@
           <div>
             <h2><%= robot.name %></h2>
             <p><%= robot.description %></p>
+            <p><%= robot.category %></p>
           </div>
           <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
           <% if robot.user.photo.attached? %>
@@ -33,5 +41,10 @@
       <% end %>
     </div>
     <% end %>
+  <% else %>
+  <h4 class="m-5 text-center">Unfortunately <%= @user.first_name %> has no robots for rental.</h4>
   </div>
+  <% end %>
+</div>
+
 </div>
