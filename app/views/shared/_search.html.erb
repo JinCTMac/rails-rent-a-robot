@@ -7,6 +7,28 @@
     class: "form-control",
     placeholder: "Find a robot!"
   %>
+    <div class="category-wrapper">
+      <div class="category-container">
+        <%= label_tag("Gardening") %>
+        <%= check_box_tag("Gardening", "1", params[:Gardening] == "1")%>
+      </div>
+      <div class="category-container">
+        <%= label_tag("Driver") %>
+        <%= check_box_tag("Driver", "1", params[:Driver] == "1") %>
+      </div>
+      <div class="category-container">
+        <%= label_tag("Home") %>
+        <%= check_box_tag("Home", "1", params[:Home] == "1") %>
+      </div>
+      <div class="category-container">
+        <%= label_tag("Nanny") %>
+        <%= check_box_tag("Nanny", "1", params[:Nanny] == "1") %>
+      </div>
+      <div class="category-container">
+        <%= label_tag("Chef") %>
+        <%= check_box_tag("Chef", "1", params[:Chef] == "1") %>
+      </div>
+    </div>
   </div>
   <div class="col-md-1">
     <%= submit_tag "Search", class: "btn btn-primary search-button" %>
