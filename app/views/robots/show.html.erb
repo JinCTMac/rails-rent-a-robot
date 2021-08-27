@@ -30,12 +30,14 @@
 <div class="container card-container">
   <div class="row row-details">
     <div class="owner-info col-md-8">
+      <%= link_to user_profile_path(@robot.user) do %>
       <div class="card-product">
           <% if @robot.user.photo.attached? %>
               <%= cl_image_tag @robot.user.photo.key, height: 300, width: 400, crop: :fill, class: 'card-trip-user avatar-bordered' %>
           <% else %>
               <img class="card-trip-user avatar-bordered" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
           <% end %>
+      <% end %>
         <div class="card-product-infos">
           <h2>Owner Details</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
@@ -52,9 +54,14 @@
               <p><strong>Price Per Day: £<%= @robot.price_per_day %></strong></p>
             </div>
               <!-- Button trigger modal -->
-            <button type="button" class="btn btn-secondary w-100 a-tag" data-toggle="modal" data-target="#bookingModal">
-                Book Now
-            </button>
+            <% if user_signed_in? %>
+              <button type="button" class="btn btn-secondary w-100 a-tag" data-toggle="modal" data-target="#bookingModal">
+                  Book Now
+              </button>
+            <% else %>
+              <p>Please login to book a robot</p>
+              <%= link_to 'Login', new_user_session_path, class: 'btn btn-secondary w-100 a-tag' %>
+            <% end %>
           </div>
             <!-- /checkout -->
         </div>
