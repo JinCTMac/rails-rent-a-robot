@@ -9,10 +9,15 @@ class RobotsController < ApplicationController
     #     search_input = "#{params[:query]} #{params[:category]}"
     #     @robots = Robot.search_by_name_and_category(search_input)
     #   end
+    # raise
+    @robots = Robot.all
+    filter_hash = params.select { |key, value| value == "1"}
     if params[:query].present?
       @robots = Robot.search_by_name_and_category(params[:query])
-    else
-      @robots = Robot.all
+    end
+
+    if filter_hash.keys.length.positive?
+      @robots = @robots.where('category ILIKE any ( array[?] )', filter_hash.keys)
     end
   end
 
