@@ -1,4 +1,113 @@
 <div class="main-container">
     <%= render 'shared/navbar_home' %>
     <%= render 'shared/banner' %>
+
+</div>
+
+<div class="container mt-5">
+  <div class="m-4">
+    <h2>Garden Bots 🌻</h2>
+    <h4>Keep your garden looking beautiful with these Robots!</h4>
+    <div class="row">
+      <% @garden_bots[0..3].each do |robot| %>
+      <div class="col-sm-6 col-md-3">
+        <%= link_to robot_path(robot) do %>
+        <div class="card-trip my-4">
+          <% if robot.photo.attached? %>
+          <%= cl_image_tag robot.photo.key, height: 300, width: 400, crop: :fill, class: 'robot-img' %>
+          <% else %>
+          <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= robot.name %></h2>
+              <p><%= robot.description %></p>
+              <br>
+              <p><strong><%= robot.category.upcase %></strong> </p>
+            </div>
+            <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
+            <% if robot.user.photo.attached? %>
+                <%= cl_image_tag robot.user.photo.key, height: 300, width: 400, crop: :fill, class: 'card-trip-user avatar-bordered' %>
+            <% else %>
+                <img class="card-trip-user avatar-bordered" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="m-4">
+    <h2>Home Bots 🧹</h2>
+    <h4>Why wast time cleaning when these bots could be doing it for you!</h4>
+    <div class="row">
+      <% @home_bots[0..3].each do |robot| %>
+      <div class="col-sm-6 col-md-3">
+        <%= link_to robot_path(robot) do %>
+        <div class="card-trip my-4">
+          <% if robot.photo.attached? %>
+          <%= cl_image_tag robot.photo.key, height: 300, width: 400, crop: :fill, class: 'robot-img' %>
+          <% else %>
+          <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= robot.name %></h2>
+              <p><%= robot.description %></p>
+              <br>
+              <p><strong><%= robot.category.upcase %></strong> </p>
+            </div>
+            <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
+            <% if robot.user.photo.attached? %>
+                <%= cl_image_tag robot.user.photo.key, height: 300, width: 400, crop: :fill, class: 'card-trip-user avatar-bordered' %>
+            <% else %>
+                <img class="card-trip-user avatar-bordered" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="m-4">
+    <h2><%= @user.first_name %>'s Bots 🤖</h2>
+    <h4>See all the bots from a specific user!</h4>
+    <div class="row">
+      <% @user_bots[0..3].each do |robot| %>
+      <div class="col-sm-6 col-md-3">
+        <%= link_to robot_path(robot) do %>
+        <div class="card-trip my-4">
+          <% if robot.photo.attached? %>
+          <%= cl_image_tag robot.photo.key, height: 300, width: 400, crop: :fill, class: 'robot-img' %>
+          <% else %>
+          <img src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= robot.name %></h2>
+              <p><%= robot.description %></p>
+              <br>
+              <p><strong><%= robot.category.upcase %></strong> </p>
+            </div>
+            <h2 class="card-trip-pricing">£<%= robot.price_per_day %></h2>
+            <% if robot.user.photo.attached? %>
+                <%= cl_image_tag robot.user.photo.key, height: 300, width: 400, crop: :fill, class: 'card-trip-user avatar-bordered' %>
+            <% else %>
+                <img class="card-trip-user avatar-bordered" src="https://source.unsplash.com/1DjbGRDh7-E/1600x900" />
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
