@@ -6,8 +6,18 @@
     <p>| ❤️ Save </p>
   </div>
   <div class="robot-info">
-    <p class="robot-category">🔧Category: <%= @robot.category %> | </p>
-    <p class="robot-price"> 💰Price: £<%= @robot.price_per_day %></p>
+    <div class="robot-details">
+      <p class="robot-category">🔧Category: <%= @robot.category %> | </p>
+      <p class="robot-price"> 💰Price: £<%= @robot.price_per_day %></p>
+    </div>
+    <div class="robot-actions">
+    <% if current_user == @robot.user  %>
+      <%= link_to 'Edit', edit_robot_path(@robot), class: "btn btn-secondary" %>
+      <%= link_to 'Delete', robot_path(@robot), method: :delete, class: "btn btn-danger" %>
+      <% else %>
+    <% end %>
+    </div>
+
   </div>
   <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));">
     <% if @robot.photo.attached? %>
@@ -23,7 +33,7 @@
     <div class="owner-info col-md-8">
       <div class="card-product">
         <img
-        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
         <div class="card-product-infos">
           <h2>Owner Details</h2>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
@@ -79,6 +89,7 @@
           </div>
           <% end %>
         </div>
+
       </div>
     </div>
   </div>
