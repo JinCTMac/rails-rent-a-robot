@@ -18,7 +18,7 @@
     </div>
 
   </div>
-  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));">
+  <div class="banner-show mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));">
     <% if @robot.photo.attached? %>
       <%= cl_image_tag @robot.photo.key, style: 'width: 100%;' %>
     <% else %>
@@ -40,9 +40,7 @@
       <% end %>
         <div class="card-product-infos">
           <h2>Owner Details</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam incidunt blanditiis nulla odio dolorum
-            delectus nobis necessitatibus, ea et labore harum. Corrupti debitis libero cupiditate inventore, eligendi
-            repellat labore provident.</p>
+          <p>Hey there! Welcome to my robot page.<br><br>I love robots and I think everyone should try them out. I also prefer robots to humans. All my robots are clean and well mannered. They are programmed with a set of commands which you will receive in the user manual. No funny business with the robots please. I'm watching.</p>
           </div>
       </div>
         <%= @robot.description %>
