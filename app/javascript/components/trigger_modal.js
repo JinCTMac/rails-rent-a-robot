@@ -1,7 +1,12 @@
 const triggerModal = () => {
-  if (document.getElementById('booking_count').value != 0) {
-    $('#bookingModal').modal('show');
-    console.log("test");
+  const input = document.getElementById('booking_count');
+  if (input) {
+  console.log("on input page");
+  console.log(input);
+    if (input.value != "0") {
+      console.log("blah");
+      $('#bookingModal').modal('show');
+    }
   }
 };
 

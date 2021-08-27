@@ -16,12 +16,23 @@
       <li class="nav-item">
         <a class="nav-link" href="<%= robots_path %>">Robots</a>
       </li>
-      <li class="nav-item">
-      <% if current_user == nil %>
-        <a class="nav-link mr-3" href="<%= new_user_session_path %>">Login</a>
-      <% else %>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link mr-3' %>
-      <% end %>
+            <li class="nav-item">
+        <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://source.unsplash.com/6HzhFuiVO60/300x300" class="avatar-bordered" />
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -70px">
+            <a class="dropdown-item" href="#"></a>
+            <%= link_to 'My account', new_robot_path, class: 'dropdown-item' %>
+            <%= link_to 'Add a robot', new_robot_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+        <% else %>
+        <%= link_to 'Login', new_user_session_path, class: 'nav-link mr-3' %>
+        <% end %>
       </li>
       <li class="nav-item dropdown">
         <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://source.unsplash.com/HBGYvOKXu8A/300x300" /> %>
