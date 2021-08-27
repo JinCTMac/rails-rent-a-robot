@@ -24,7 +24,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -70px">
             <a class="dropdown-item" href="#"></a>
-            <%= link_to 'My account', new_robot_path, class: 'dropdown-item' %>
+            <%= link_to 'My account', user_path, class: 'dropdown-item' %>
             <%= link_to 'Add a robot', new_robot_path, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>

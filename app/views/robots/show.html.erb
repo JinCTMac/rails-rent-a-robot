@@ -14,7 +14,6 @@
     <% if current_user == @robot.user  %>
       <%= link_to 'Edit', edit_robot_path(@robot), class: "btn btn-secondary" %>
       <%= link_to 'Delete', robot_path(@robot), method: :delete, class: "btn btn-danger" %>
-      <% else %>
     <% end %>
     </div>
 
